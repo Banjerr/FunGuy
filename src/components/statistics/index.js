@@ -11,7 +11,7 @@ type State = {
 };
 
 type Props = {
-
+    age: number
 };
 
 class Stastics extends React.Component<Props, State> {
@@ -32,6 +32,7 @@ class Stastics extends React.Component<Props, State> {
                     <span>CO2: {this.state.co2}%</span>
                     <span>Light: {this.state.light}%</span>
                     <span>Nutrition: {this.state.nutrition}%</span>
+                    <span>Age: {this.props.age}seconds old</span>
                 </div>
             </div>
         );
