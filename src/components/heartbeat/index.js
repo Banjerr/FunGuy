@@ -26,13 +26,19 @@ class Heartbeat extends React.Component<Props, State> {
         }));
     }
 
+    // TODO figure out how to better degrade stats over time at intervals
+    // turn into observable stream
     timelineCheck() {
         if (this.state.age >= 30) {
-console.log('more than 30 seconds');
-        } else if (this.state.age >= 180) {
+console.log("more than 30 seconds");
+        } else if (this.state.age >= 60) {
+console.log("more than 2 minutes");
+        } else if (this.state.age >= 120) {
 console.log('more than 3 minutes');
+        } else if (this.state.age >= 180) {
+console.log("more than 3 minutes");
         } else if (this.state.age >= 360) {
-console.log('more than 6 minutes')
+console.log("more than 6 minutes");
         } 
     }
 

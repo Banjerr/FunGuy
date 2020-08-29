@@ -34,7 +34,7 @@ class Body extends React.Component<Props, State> {
                             opacity="1"
                             fillOpacity="0"
                             stroke="#000000"
-                            strokeWidth="1"
+                            strokeWidth="4"
                             strokeOpacity="1"
                         />
                         </g>

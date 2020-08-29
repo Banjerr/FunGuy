@@ -1,8 +1,8 @@
 // @flow
 import React from "react";
 import './index.css';
-import Stastics from '../statistics';
 import Body from './body';
+import { Balloon } from "nes-react";
 
 // TODO ideas
 // too much light/lack of nutrition makes fungi slow growth
@@ -21,10 +21,11 @@ type Props = {
 class Character extends React.Component<Props, State> {
   render() {
     return (
-      <div className="Character">
-        <Stastics age={this.props.age} />
-        i'm a funguy
-          <Body />
+      <div className="Character">        
+        <Balloon fromRight>
+            i'm a funguy
+        </Balloon>
+        <Body />
       </div>
     );
   }

@@ -88,7 +88,7 @@ class Eyes extends React.Component<Props, State> {
 
   render() {
     return (
-      <svg
+      <svg        
         className="Eyes"
         id="svg"
         viewBox="0 0 1000 1000"

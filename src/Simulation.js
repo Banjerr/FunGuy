@@ -1,5 +1,6 @@
 import React from 'react';
 import './Simulation.css';
+import { Container, Button } from "nes-react";
 import Heartbeat from './components/heartbeat';
 
 type State = {
@@ -15,7 +16,7 @@ class Simulation extends React.Component<Props, State> {
     super(props);
 
     this.state = {
-      powerStatus: true
+      powerStatus: false
     };
     
     this.togglePower = this.togglePower.bind(this);
@@ -29,10 +30,10 @@ class Simulation extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className="Simulation">
-        <span onClick={() => this.togglePower()} className="PowerBtn">Power {this.state.powerStatus ? `off` : `on`}</span>
+      <Container className="Simulation">
+        <Button onClick={() => this.togglePower()} className="PowerBtn">Power {this.state.powerStatus ? `off` : `on`}</Button>
         <Heartbeat power={this.state.powerStatus} />
-      </div>
+      </Container>
     );
   }
 }
