@@ -1,9 +1,3 @@
-#svg {
-  /* position: fixed; */
-  width: 20%;
-  height: 20%;
-}
-
 .eye-outer {
   fill: none;
   stroke: #000;
@@ -12,4 +6,16 @@
 
 .eye-inner {
   fill: #000;
+}
+
+.characterCanvas {
+    position: relative;
+    max-width: 420px;
+    text-align: center;
+}
+
+.Eyes {
+    position: absolute;
+    height: 50%;
+    width: 90%;
 }
