@@ -15,7 +15,7 @@ class Simulation extends React.Component<Props, State> {
     super(props);
 
     this.state = {
-      powerStatus: false
+      powerStatus: true
     };
     
     this.togglePower = this.togglePower.bind(this);

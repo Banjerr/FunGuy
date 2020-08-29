@@ -1,0 +1,15 @@
+#svg {
+  /* position: fixed; */
+  width: 50%;
+  height: 50%;
+}
+
+.eye-outer {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1;
+}
+
+.eye-inner {
+  fill: #000;
+}
