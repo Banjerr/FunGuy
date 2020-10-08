@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import Environment from '../environment';
+import { stateStore, stateService } from '../state';
 
 // TODO ideas
 // heartbeat checks every second for stuff
@@ -16,14 +17,30 @@ type Props = {
 };
 
 class Heartbeat extends React.Component<Props, State> {
-    state = {
-        age: 0,
-    };
+    constructor(props) {
+        super(props);
 
-    updateAge() {        
+        this.state = {
+          age: 0,
+        };
+
+        this.updateAge = this.updateAge.bind(this);
+        this.timelineCheck = this.timelineCheck.bind(this);
+        this.beat = this.beat.bind(this);
+        this.setInitialAge = this.setInitialAge.bind(this);
+    }   
+
+    updateAge() {   
         this.setState(prevState => ({
             age: prevState.age + 1,
         }));
+        stateStore.sendState({age: this.state.age});
+    }
+
+    setInitialAge(stateObj) {
+        console.log('stateObj is ', stateObj);
+        let { age } = stateObj;
+        this.setState({ age: age });
     }
 
     // TODO figure out how to better degrade stats over time at intervals
@@ -47,9 +64,10 @@ console.log("more than 6 minutes");
         this.timelineCheck();
     }
 
-    componentDidMount() {
+    componentDidMount() {        
         setInterval(() => {
             if (this.props.power) {
+                stateService.subscribe(this.setInitialAge);
                 this.beat();
             }            
         }, 1000);      

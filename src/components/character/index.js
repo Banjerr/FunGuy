@@ -15,7 +15,7 @@ type State = {
 };
 
 type Props = {
-    age: number
+    
 };
 
 class Character extends React.Component<Props, State> {
