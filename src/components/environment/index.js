@@ -43,14 +43,14 @@ class Environment extends React.Component<Props, State> {
         }));
     }
 
-    reversePercentage(finalNum) {
+    reversePercentage(finalNum: number) {
         return 100-finalNum;
     }
 
     render() {
         return (
           <Container>
-            <Stastics age={this.props.age} />
+            <Stastics age={this.props.age} light={this.state.light} />
             <Container className="Environmental-Controls">
               <p>Lights</p>
               <Slider

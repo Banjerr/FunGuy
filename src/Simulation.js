@@ -2,6 +2,7 @@ import React from 'react';
 import './Simulation.css';
 import { Container, Button } from "nes-react";
 import Heartbeat from './components/heartbeat';
+import { stateStore, stateService } from './components/state';
 
 type State = {
   powerStatus: boolean
@@ -20,6 +21,10 @@ class Simulation extends React.Component<Props, State> {
     };
     
     this.togglePower = this.togglePower.bind(this);
+  }
+
+  componentDidMount() {
+    stateStore.init();
   }
 
   togglePower() {
